@@ -1,0 +1,161 @@
+:root {
+  --red: #9c2416;
+  --blue: #004f9e;
+  --orange: #cc9000;
+  --green: #03b0a1;
+  --lgreen: #bfdfdc;
+  --yellow: #f4e6c4;
+  --grey: #575757;
+  --lgrey: #949494;
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+/* Recommended font size for accessibility and font text for all elementa */
+button,h1, h3, p,footer,span,a,div{
+  font-size: 16px;
+}
+/* Menu button styling */
+#menu {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+  z-index: 1;
+}
+/* Adding text after the far left menu bar representing a users amount of accrued points */
+#menu::after {
+  content: ' 0 Pts';
+  color: var(--blue);
+  font-weight: bold;
+}
+/* Top navigation bar style. Every dot class that contains nav styles the top bar */
+.navbar-custom {
+    background-color: white;
+}
+.nav-link {
+  float: right !important;
+  position: absolute;
+  color: #4D9BF5;
+  right: 0;
+  top: 0;
+}
+/* Positionng the top middle button for language and stylying it */
+#langpos{
+  position:absolute;
+  margin-left:-50%;
+  left:50%;
+  top: 0%;
+}
+#lang{
+  background-color: white;
+  outline:white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+/* Styling and positioning the menu bar that appears on the left side of the screen */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar span{
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  left: 2%;
+  font-size: 36px;
+}
+
+.sidebar h3{
+  position: absolute;
+  color: yellow;
+  text-align: center;
+  right: 0;
+  top: 0%;
+  font-size: 25px;
+}
+.sidebar a {
+  font-weight: bold;
+  padding: 8px 8px 8px 32px;
+  text-decoration: underline;
+  font-size: 24px;
+  float: left;
+  color: white;
+  display: block;
+}
+
+.X{
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 4%;
+  right: 0%;
+  font-size: 36px;
+}
+
+#line{
+  position: relative;
+}
+#text{
+  position: relative;
+}
+/* Log in text */
+h2{
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+}
+hr{
+  display: block;
+  position: relative;
+  width: 99%;
+  border: 5px solid #CFD0D2;
+}
+form{
+  text-align: center;
+}
+/* Confirm Button */
+#Confirm{
+  position: relative;
+  text-align: center;
+  background-color: #1A7BEA;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 110px;
+}
+#Confirm::after{
+  position: absolute;
+  content: url(../images/tick.png);
+  float: right;
+  bottom: 0%;
+  right: 0%;
+}
+#phonetext{
+  position: relative;
+  text-align: center;
+}
+/* Reducing the density of the sidebar for devices with height less than 450px*/
+@media screen and (max-width: 769px) {
+  #langpos{
+    position:absolute;
+    margin-right:-50%;
+    right:50%;
+    top: 0%;
+  }
+}

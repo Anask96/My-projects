@@ -1,0 +1,275 @@
+:root {
+  --red: #9c2416;
+  --blue: #004f9e;
+  --orange: #cc9000;
+  --green: #03b0a1;
+  --lgreen: #bfdfdc;
+  --yellow: #f4e6c4;
+  --grey: #575757;
+  --lgrey: #949494;
+}
+
+/* Make the background of the vanigation bar white */
+.navbar-custom {
+  background-color: white;
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* Positionng the top right home button and stylying it */
+.nav-link {
+  float: right !important;
+  position: absolute;
+  color: var(--blue) !important;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Menu button styling */
+#menu {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+  z-index: 1;
+}
+
+/* Adding text after the far left menu bar representing a users amount of accrued points */
+#menu::after {
+  content: ' 138 Pts';
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* Positionng the top middle button for language and stylying it */
+#langpos {
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+  top: 0%;
+}
+
+#lang {
+  background-color: white;
+  outline: white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+#lang:hover {
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* Styling and positioning the menu bar that appears on the left side of the screen */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar span {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 0%;
+  left: 0%;
+  font-size: 36px;
+}
+
+.sidebar h3 {
+  position: absolute;
+  color: var(--yellow);
+  text-align: center;
+  right: 0;
+  top: 0%;
+  font-size: 30px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.sidebar a {
+  font-weight: bold;
+  padding: 8px 8px 8px 32px;
+  text-decoration: underline;
+  font-size: 24px;
+  float: left;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: rgb(92, 176, 255);
+}
+
+/* The exit button represented as an X on the top right */
+.X {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 4%;
+  right: 0%;
+  font-size: 36px;
+}
+
+/* Positioning the map */
+#mapdiv {
+  position: relative;
+  width: 100%;
+  height: 45%;
+}
+
+/* Styling and positioning the trash info area which contains the description of the Trash location, trash type, photo of the trash and trash size */
+.info {
+  width: 100%;
+  height: 42%;
+  padding: 10px;
+  background-color: #00ffe826;
+}
+
+/* Col1 contains the location description, type and size */
+.col1 {
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding-right: 3px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background-color: white;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/* Col2 contains the image of the trash */
+.col2 {
+  float: right;
+  width: 50%;
+  height: 100%;
+  padding-left: 3px;
+  overflow-y: auto;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: white;
+}
+
+#trashImg {
+  width: auto !important;
+  margin: auto;
+  display: block;
+}
+
+#where {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+#type {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+#size {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+/* Styling and positioning the buttons at the buttom of the page */
+.buttons {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  background-color: #00ffe826;
+}
+
+/* Styling and positioning the texts on the buttons at the buttom of the page */
+#back {
+  width: 50%;
+  text-align: center;
+  padding-right: 2px;
+}
+
+#collect {
+  width: 50%;
+  text-align: center;
+  padding-left: 2px;
+}
+
+#button1 {
+  width: 100%;
+  color: white;
+  font-size: 20px !important;
+  border-style: none;
+  background-color: var(--red);
+  border-radius: 10px;
+  font-size: 94%;
+  height: 100%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+#button1:hover {
+  background-color: white;
+  color: var(--red);
+  border: var(--red);
+  border-style: solid;
+  border-width: 2px;
+}
+
+#button2 {
+  font-size: 20px !important;
+  width: 100%;
+  color: white;
+  border-style: none;
+  background-color: var(--blue);
+  border-radius: 10px;
+  font-size: 94%;
+  height: 100%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+#button2:hover {
+  background-color: white;
+  color: var(--blue);
+  border: var(--blue);
+  border-style: solid;
+  border-width: 2px;
+}
+
+
+@media screen and (max-height: 600px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #langpos {
+    position: absolute;
+    margin-right: -50%;
+    right: 50%;
+    top: 0%;
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/signin.css">
+  <script src="https://kit.fontawesome.com/fcb15b35b1.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap dependency. Do not remove -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title id="title">Sign In</title>
+</head>
+
+<body>
+  <!-- Bootstrap dependency. Do not remove -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!-- Javascript code needed to access the side menu -->
+  <script type="text/javascript">
+    //Opens the side menu
+    function openSideBar() {
+      document.getElementById('sidebar').style.width = "200px";
+      document.getElementById('menubtn').style.color = "white";
+    }
+    //Closes the side menu
+    function closeSideBar() {
+      document.getElementById('sidebar').style.width = "0";
+      document.getElementById('menubtn').style.color = "none";
+    }
+    /* Change to spanish or back to English */
+    function changeLanguage() {
+      lang = document.documentElement.lang;
+      if (lang == 'en') {
+        changeToSpanish();
+      } else {
+        window.location.reload(true);
+        document.documentElement.lang = "en";
+      }
+    }
+
+    function changeToSpanish() {
+      document.documentElement.lang = "es";
+      document.getElementById('pointsSide').innerHTML = "0 Puntos";
+      document.getElementById('signinSide').innerHTML = "Iniciar sesión";
+      document.getElementById('homeSide').innerHTML = "Inicio";
+      document.getElementById('reportSide').innerHTML = "Informar";
+      document.getElementById('collectSide').innerHTML = "Recoger";
+      document.getElementById('dropoffSide').innerHTML = "Punto de Entrega";
+      document.getElementById('homelink').innerHTML = "Inicio";
+      document.getElementById('submit').innerHTML = "Entrar <i class=\"fas fa-check-circle loseIcon\" id=\"subIcon\"></i>";
+      document.getElementById('login').innerHTML = "Iniciar sesión / Inscribirse";
+      document.getElementById('phonetext').innerHTML = "Ingrese su número telefónico:";
+    }
+  </script>
+  <!-- Top bar for the whole page, reference bootstrap nav documentation -->
+  <nav class="navbar navbar-custom">
+    <div id="langpos" class="col-md-12 text-center">
+      <button id="lang" onclick="changeLanguage()" type="button" name="language">ESP | ENG</button>
+    </div>
+    <button id="menu" onclick="openSideBar()"><i class="fas fa-bars" title="Menu Button"></i></button>
+    <a id="homelink" class="nav-link" href="../html/mainpage.html">Home</a>
+    <div class="container.fluid">
+      <div id="sidebar" class="sidebar">
+        <h3 id="pointsSide">138 Points</h3>
+        <span tabindex=0 onfocus="openSideBar()" id="menubtn" style="font-size:30px;cursor:pointer"
+          onclick="closeSideBar()">&#9776;</span>
+        <a id="signinSide" href="../html/signin.html">Sign In</a>
+        <a id="homeSide" href="../html/mainpage.html" onclick="closeSideBar()">Home</a>
+        <a id="reportSide" href="../html/reporting.html">Report</a>
+        <a id="collectSide" href="../html/collection.html">Collect</a>
+        <a onfocusout="closeSideBar()" id="dropoffSide" href="">Drop Off Locations</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="hii">
+    <h2 id="login">Log In / Sign Up</h2>
+  </div>
+  <div id="line">
+    <hr>
+  </div>
+  <div id="text">
+    <p id="phonetext">Enter your phone number:</p>
+  </div>
+  <form class="" action="" method="post">
+    <input type="text" id="input" />
+    <button id="submit" type="button" name="yes" class="btn btn-primary btn-lg">Sign In <i
+        class="fas fa-check-circle loseIcon" id="subIcon"></i></button>
+
+  </form>
+
+
+</body>
+
+</html>

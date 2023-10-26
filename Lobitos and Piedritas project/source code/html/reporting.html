@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../javascript/reporting.js" async></script>
+  <link rel="stylesheet" href="../css/reporting.css">
+  <!-- Bootstrap dependency. Do not remove -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title id="title">Report</title>
+  <!-- Catering for slow connections. -->
+  <script type="text/javascript">
+    //Anything longer than 10 seconds stops the page from loading any further resources other than the basic html elements and basic css but still downloads necessary icons in the background
+    var slowLoad = window.setTimeout(function () {
+      window.stop();
+    }, 10000);
+
+    window.addEventListener('load', function () {
+      window.clearTimeout(slowLoad);
+    }, false);
+  </script>
+  <script src="https://kit.fontawesome.com/fcb15b35b1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Bootstrap dependency. Do not remove -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!-- Top bar for the whole page, reference bootstrap nav documentation -->
+  <nav class="navbar navbar-custom">
+    <div id="langpos" class="col-md-12 text-center">
+      <button id="lang" onclick="changeLanguage()" type="button" name="language">ESP | ENG</button>
+    </div>
+    <button id="menu" onclick="openSideBar()"><i class="fas fa-bars" title="Menu Button"></i></button>
+    <a id="homelink" class="nav-link" href="../html/mainpage.html">Home</a>
+    <div class="container.fluid">
+      <div id="sidebar" class="sidebar">
+        <h3 id="pointsSide">138 Points</h3>
+        <span tabindex=0 onfocus="openSideBar()" id="menubtn" style="font-size:30px;cursor:pointer"
+          onclick="closeSideBar()">&#9776;</span>
+        <a id="signinSide" href="../html/signin.html">Sign In</a>
+        <a id="homeSide" href="../html/mainpage.html" onclick="closeSideBar()">Home</a>
+        <a id="reportSide" href="../html/reporting.html">Report</a>
+        <a id="collectSide" href="../html/collection.html">Collect</a>
+        <a onfocusout="closeSideBar()" id="dropoffSide" href="">Drop Off Locations</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wholePage">
+    <div id="cont" class="container-fluid">
+      <div id="tophalf" class="row">
+        <section class="gps-where">
+          <h4 id="heading1">Where is the trash?</h4>
+          <div class="desRequired">
+            <!-- <p id="locationDes">Describe the location:</p> -->
+            <p id="locationDes" class="regText">Describe the location:</p>
+            <p id="reqText" class="required">*Required</p>
+          </div>
+          <textarea id="wheretextarea" name="name" rows="8" cols="50"></textarea>
+          <p id="opText" class="optionalText">Optional</p>
+          <div id="selectbtnpos" class="col-md-12 text-center">
+            <button id="selectmapbtn" t ype="button" name="Select position on a map" onclick="openLocation()"
+              class="btn btn-outline-secondary">Select On Map <i class="fas fa-map-marker-alt loseIcon"></i></button>
+          </div>
+          <script type="text/javascript">
+            function openLocation() {
+              window.open("../html/location.html", "_self");
+            }
+          </script>
+        </section>
+      </div>
+      <hr id="divisor" />
+      <div id="bottomhalf" class="row">
+        <h4 id="heading2">What is it?</h4>
+        <div class="desRequired">
+          <p id="typeTrash" class="regText">Type of Trash</p>
+          <p id="reqText2" class="required">*Required</p>
+        </div>
+        <section id="checkboxes">
+          <div id="checkboxpos" class="col-md-12 text-center">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label id="paper" class="form-check-label" for="inlineCheckbox1">Paper</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label id="plastic" class="form-check-label" for="inlineCheckbox2">Plastic</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label id="metal" class="form-check-label" for="inlineCheckbox3">Metal</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label id="wood" class="form-check-label" for="inlineCheckbox3">Wood</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label id="glass" class="form-check-label" for="inlineCheckbox3">Glass</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label id="electronic" class="form-check-label" for="inlineCheckbox3">Electronic</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label id="other" class="form-check-label" for="inlineCheckbox3">Other</label>
+            </div>
+          </div>
+        </section>
+        <hr class="smallDivisor" />
+        <div class="desRequired">
+          <p id="size" class="regText">Size</p>
+          <p id="reqText3" class="required">*Required</p>
+        </div>
+        <section id="radioButtons">
+          <label class="radio">
+            <span class="radio__input">
+              <input type="radio" name="radio" />
+              <span class="radio__control"></span>
+            </span>
+            <span id="small" class="radio__label">Small</span>
+          </label>
+
+          <label class="radio">
+            <span class="radio__input">
+              <input type="radio" name="radio" />
+              <span class="radio__control"></span>
+            </span>
+            <span id="medium" class="radio__label">Medium</span>
+          </label>
+
+          <label class="radio">
+            <span class="radio__input">
+              <input type="radio" name="radio" />
+              <span class="radio__control"></span>
+            </span>
+            <span id="large" class="radio__label">Large</span>
+          </label>
+        </section>
+        <hr class="smallDivisor" />
+
+        <section class="picture-trash">
+          <div id="customuploadbtnpos" class="col-md-12 text-center">
+            <p id="opText2" class="optionalText">Optional</p>
+            <button id="customuploadbtn" onclick="uploadPopUp()" type="button" name="Upload a photo">Upload
+              Picture <i class="fas fa-upload loseIcon"></i></button>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- The popup tp upload a picture -->
+    <div id="uploadPopUp">
+      <p id="uploadtext">Upload from your Device</p>
+      <a href="javascript:void(0)" id="x" onclick="closePopUpExit()">&times;</a>
+      <div id="gridContainer">
+        <input onchange="inputPlaceHolderPic()" type="file" id="upload2" hidden>
+        <div id="uploadbtnpos" class="col-md-12 text-center">
+          <label id="uploadbtn" for="upload2">Select <i class="far fa-file-image loseIcon"></i></label>
+        </div>
+      </div>
+      <div id="thumbnailcont">
+        <img tabindex=0 id="thumbnail" src="../images/trash.jpg" alt="Your chosen photo to upload">
+        <button onclick="uploadPopUp()" id="selectagain" type="button" name="button">Select <i
+            class="fas fa-redo-alt loseIcon"></i></button>
+        <button onclick="closePopUp()" id="confirm" type="button" name="button">Confirm <i
+            class="fas fa-check-circle loseIcon"></i></button>
+      </div>
+
+    </div>
+    <div id="submitbtnpos" class="col-md-12 text-center">
+      <button id="exit" type="button" name="Cancel button" class="btn btn-primary" onclick="previousPage()">EXIT <i
+          class="fas fa-times-circle loseIcon" id="cancelIcon"></i></button>
+      <button id="submit" onclick="acceptAll()" type="button" name="yes" class="btn btn-primary btn-lg">SUBMIT <i
+          class="fas fa-check-circle loseIcon" id="subIcon"></i></button>
+    </div>
+  </div>
+</body>
+
+</html>

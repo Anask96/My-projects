@@ -1,0 +1,236 @@
+:root {
+  --red: #9c2416;
+  --blue: #004f9e;
+  --orange: #cc9000;
+  --green: #03b0a1;
+  --lgreen: #bfdfdc;
+  --yellow: #f4e6c4;
+  --grey: #575757;
+  --lgrey: #949494;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: var(--lgreen);
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* Make the background of the vanigation bar white */
+.navbar-custom {
+  background-color: white;
+}
+
+/* Positionng the top right home button and stylying it */
+.nav-link {
+  float: right !important;
+  position: absolute;
+  color: var(--blue) !important;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Menu button styling */
+#menu {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+  z-index: 1;
+}
+
+/* Adding text after the far left menu bar representing a users amount of accrued points */
+#menu::after {
+  content: ' 138 Pts';
+  color: var(--blue);
+  font-weight: bold;
+}
+
+#langpos {
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+  top: 0%;
+}
+
+#lang {
+  background-color: white;
+  outline: white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+#lang:hover {
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* Styling and positioning the menu bar that appears on the left side of the screen */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar span {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 0%;
+  left: 0%;
+  font-size: 36px;
+}
+
+.sidebar h3 {
+  position: absolute;
+  color: var(--yellow);
+  text-align: center;
+  right: 0;
+  top: 0%;
+  font-size: 30px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.sidebar a {
+  font-weight: bold;
+  padding: 8px 8px 8px 32px;
+  text-decoration: underline;
+  font-size: 24px;
+  float: left;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: rgb(92, 176, 255);
+}
+
+/* The exit button represented as an X on the top right */
+.X {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 4%;
+  right: 0%;
+  font-size: 36px;
+}
+
+/* Positioning the map */
+#mapdiv {
+  position: relative;
+  width: 100%;
+  height: 38%;
+}
+
+/* Styling and positioning the location description in side a list element */
+.part2 {
+  padding: 10px;
+  font-size: 18px;
+  position: relative;
+  width: 99%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.part2:hover {
+  color: white;
+}
+
+/* Positioning the map marker icon in a list element */
+.icon {
+  margin: 10px;
+  margin-left: 0;
+  position: relative;
+  flex: 1;
+}
+
+/* Styling and positioning list elements */
+.list-element {
+  max-width: 100%;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+
+  box-shadow: 0px 4px 11px -7px #000000;
+}
+
+.list-element:hover {
+  background-color: var(--blue);
+  box-shadow: inset 0px 4px 11px -7px #000000;
+}
+
+/* Styling and positioning the trash list */
+#myList {
+  padding-top: 5px;
+  max-height: 50%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  list-style-type: none;
+}
+
+
+@media screen and (max-height: 430px) {
+  #mapdiv {
+    position: relative;
+    width: 100%;
+    height: 40%;
+  }
+
+  .navbar-custom {
+    background-color: white;
+    height: 25px;
+  }
+
+  #myList {
+    max-height: 50%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style-type: none;
+    padding-top: 7px;
+  }
+
+}
+
+@media screen and (max-height: 600px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 23px;
+  }
+
+}
+
+@media screen and (max-width: 769px) {
+  #langpos {
+    position: absolute;
+    margin-right: -50%;
+    right: 50%;
+    top: 0%;
+  }
+}

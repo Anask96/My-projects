@@ -1,0 +1,611 @@
+:root {
+  --red: #9c2416;
+  --blue: #004f9e;
+  --orange: #cc9000;
+  --green: #03b0a1;
+  --lgreen: #bfdfdc;
+  --yellow: #f4e6c4;
+  --grey: #575757;
+  --lgrey: #949494;
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* Recommended font size for accessibility and font text */
+button,
+head,
+body,
+a,
+textarea,
+h4,
+p {
+  font-size: 16px;
+}
+
+/* Menu button styling */
+#menu {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+  z-index: 1;
+}
+
+/* Adding text after the far left menu bar representing a users amount of accrued points */
+#menu::after {
+  content: ' 138 Pts';
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* Container for the entire page */
+.wholePage {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Top navigation bar style. Every dot class that contains nav styles the top bar */
+.navbar-custom {
+  background-color: white;
+}
+
+.nav-link {
+  float: right !important;
+  position: absolute;
+  color: var(--blue) !important;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Styling the body */
+body {
+  background: #EFD597 !important;
+}
+
+h4 {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+}
+
+/* Positionng the top middle button for language and stylying it */
+#langpos {
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+  top: 0%;
+}
+
+#lang {
+  background-color: white;
+  outline: white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+#lang:hover {
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* Styling and positioning the menu bar that appears on the left side of the screen */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar span {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 0%;
+  left: 0%;
+  font-size: 36px;
+}
+
+.sidebar h3 {
+  position: absolute;
+  color: var(--yellow);
+  text-align: center;
+  right: 0;
+  top: 0%;
+  font-size: 30px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.sidebar a {
+  font-weight: bold;
+  padding: 8px 8px 8px 32px;
+  text-decoration: underline;
+  font-size: 24px;
+  float: left;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: rgb(92, 176, 255);
+}
+
+/* The exit button represented as an X on the top right */
+.X {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 4%;
+  right: 0%;
+  font-size: 36px;
+}
+
+/* Reducing the density of the sidebar for devices with height less than 450px*/
+@media screen and (max-height: 600px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 23px;
+  }
+}
+
+#cont {
+  width: 95%;
+  /* max-width: 600px; */
+  left: 2.5%;
+  border: 2px solid var(--lgrey);
+}
+
+/*Styling the container which holds buttons, textarea and checkboxes*/
+.container-fluid {
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  display: grid;
+  border-radius: 25px;
+  border: 2px solid white;
+  padding: 20px;
+  height: 75%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Top heading of container */
+#heading1 {
+  font-weight: bold;
+  color: var(--grey);
+  position: relative;
+  font-size: 25px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0;
+}
+
+/* Centering the select map button */
+#selectbtnpos {
+  position: relative;
+  margin-left: -50%;
+  left: 50%;
+}
+
+/* Defining select map button */
+#selectmapbtn {
+  color: black;
+  border-style: none;
+  position: relative;
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#selectmapbtn:hover {
+  background-color: #af7d03;
+  color: white;
+}
+
+
+#locationDes {
+  color: var(--grey);
+  margin-bottom: 0;
+}
+
+
+.optionalText {
+  text-align: center;
+  color: var(--grey);
+  left: 0 !important;
+  margin-bottom: 0;
+}
+
+
+.regText {
+  float: left;
+  color: var(--grey);
+}
+
+.required {
+  float: left;
+  color: var(--red);
+  margin-left: 8px;
+}
+
+.smallDivisor {
+  color: var(--lgrey);
+  opacity: 100%;
+  width: 95% !important;
+  margin-bottom: 15px !important;
+  margin: 0 auto
+}
+
+/* Second part of the page heading */
+#heading2 {
+  font-weight: bold;
+  color: var(--grey);
+  position: relative;
+  font-size: 25px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+/* Positioning the upload picture button */
+#customuploadbtnpos {
+  position: relative;
+  margin-left: -50%;
+  left: 50%;
+}
+
+/* Styling above mentioned button */
+#customuploadbtn {
+  color: black;
+  border-style: none;
+  position: relative;
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#customuploadbtn:hover {
+  background-color: #af7d03;
+  color: white;
+}
+
+/* Text area for second half of container */
+#wheretextarea2 {
+  position: relative;
+  left: 4%;
+  height: 60%;
+  width: 90%;
+  background-color: #DADADA;
+}
+
+#divisor {
+  height: 2px;
+  color: var(--lgrey);
+  opacity: 100%;
+}
+
+#bottomhalf p {
+  position: relative;
+  left: 4%;
+}
+
+.form-check-inline {
+  position: relative;
+}
+
+/* Positioning submit button */
+#submitbtnpos {
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+  bottom: 0%;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-height: 750px) {
+  #submitbtnpos {
+    position: absolute;
+    margin-left: -50%;
+    left: 50%;
+    bottom: 0%;
+    margin-bottom: -10%;
+  }
+}
+
+/* Adjusting the positions for smaller width devices as behaviour is different */
+@media screen and (max-width: 813px) {
+  .container-fluid {
+    background-color: white;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    display: grid;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 80%;
+    height: 75%;
+  }
+
+  #submitbtnpos {
+    position: absolute;
+    bottom: 10%;
+    margin-right: -50%;
+    right: 50%;
+  }
+
+  #selectbtnpos {
+    position: relative;
+    margin-right: 50%;
+    right: 50%;
+  }
+
+  #customuploadbtnpos {
+    position: relative;
+    margin-right: 50%;
+    right: 50%;
+  }
+
+  #uploadbtnpos {
+    position: absolute;
+    margin-right: -50%;
+    right: 50%;
+    top: 35%;
+  }
+
+  #langpos {
+    position: absolute;
+    margin-right: -50%;
+    right: 50%;
+    top: 0%;
+  }
+
+  #checkboxpos {
+    position: relative;
+    margin-right: 50%;
+    right: 50%;
+  }
+}
+
+/* Defining submit button */
+#submit {
+  color: white;
+  border-style: none;
+  position: relative;
+  background-color: var(--blue);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#subIcon {
+  color: white;
+}
+
+
+#submit:hover {
+  background-color: white;
+  color: var(--blue);
+  border: var(--blue);
+  border-style: solid;
+  border-width: 2px;
+}
+
+#submit:hover i {
+  color: var(--blue);
+}
+
+#exit {
+  color: white;
+  border-style: none;
+  position: relative;
+  background-color: var(--red);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#cancelIcon {
+  color: white;
+}
+
+#exit:hover {
+  background-color: white;
+  color: var(--red);
+  border: var(--red);
+  border-style: solid;
+  border-width: 2px;
+}
+
+#exit:hover i {
+  color: var(--red);
+}
+
+/*Positioning checkboxes */
+#checkboxes {
+  position: relative;
+  margin-left: -50%;
+  left: 50%;
+}
+
+/* STyling the popup that shows up after clicking upload picture */
+#uploadPopUp {
+  position: absolute;
+  align-self: center;
+  height: 38%;
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid var(--lgrey);
+  z-index: 100;
+  top: 30%;
+  opacity: 0;
+  left: 5%;
+  padding: 10px;
+}
+
+#uploadPopUp p {
+
+  text-align: center;
+  font-size: 24px;
+  z-index: 100;
+}
+
+#uploadbtnpos {
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+  top: 35%;
+}
+
+#uploadbtn {
+  border-style: none;
+  position: relative;
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+}
+
+#uploadbtn:hover {
+  background-color: #af7d03;
+  color: white;
+}
+
+/* The outline for wehere the picture is supposed to be */
+#gridContainer {
+  border-style: dashed;
+  border-color: #ADABAB;
+  border-radius: 25px;
+  padding: 20px;
+  border-width: thin;
+  position: absolute;
+  width: 70%;
+  left: 15%;
+  height: 70%;
+  background-color: #ECEBEB;
+  top: 20%;
+  z-index: 100;
+  opacity: 0;
+}
+
+/* Exit button */
+#x {
+  color: var(--red);
+  position: absolute;
+  text-decoration: none;
+  top: 0%;
+  left: 0%;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Styling the thumbnail position*/
+#thumbnail {
+  position: absolute;
+  width: 70%;
+  left: 15%;
+  height: 70%;
+}
+
+/* Select again button styling */
+#selectagain {
+  color: white;
+  border-style: none;
+  position: relative;
+  background-color: var(--red);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  margin: 5px;
+}
+
+/* Condirm button */
+#confirm {
+  color: white;
+  border-style: none;
+  position: relative;
+  background-color: var(--blue);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: 5px;
+}
+
+#checkboxpos {
+  position: relative;
+  margin-left: -50%;
+  left: 50%;
+}
+
+@media screen and (max-width: 316px) {
+  .loseIcon {
+    display: none !important;
+  }
+
+  #menu::after {
+    display: none;
+  }
+}
+
+.radio {
+  display: inline-block;
+  display: -moz-inline-box;
+  *display: inline;
+  /* For IE7 */
+  /* zoom: 1; Trigger hasLayout */
+  width: 32%;
+  text-align: center;
+
+}

@@ -1,0 +1,276 @@
+:root {
+  --red: #9c2416;
+  --blue: #004f9e;
+  --orange: #cc9000;
+  --green: #03b0a1;
+  --lgreen: #bfdfdc;
+  --yellow: #f4e6c4;
+  --grey: #575757;
+  --lgrey: #949494;
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+/* Setting the font size and family for all elements in the html doc*/
+button,div,body,a,span,h4,p,input{
+  font-size: 16px;
+}
+
+/* Top navigation bar style. Every dot class that contains nav styles the top bar */
+.navbar-custom {
+  background-color: white;
+}
+
+.nav-link {
+  float: right !important;
+  position: absolute;
+  color: #4D9BF5;
+  right: 0;
+  top: 0;
+}
+
+body {
+  background: var(--yellow) !important;
+  ;
+}
+/* Menu button styling */
+#menu {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+}
+/* Adding text after the far left menu bar representing a users amount of accrued points */
+#menu::after {
+  content: ' 0 Pts';
+  color: var(--blue);
+  font-weight: bold;
+}
+/* Styling and positioning the menu bar that appears on the left side of the screen */
+.sidebar span{
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  left: 2%;
+  font-size: 36px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+    background-color: var(--blue);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar h3 {
+  position: absolute;
+  color: yellow;
+  text-align: center;
+  right: 0;
+  top: 0%;
+  font-size: 15px;
+}
+
+.sidebar a {
+  font-weight: bold;
+  padding: 8px 8px 8px 32px;
+  text-decoration: underline;
+  font-size: 24px;
+  float: left;
+  color: white;
+  display: block;
+}
+/* The exit button represented as an X on the top right */
+.X{
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 4%;
+  right: 0%;
+  font-size: 36px;
+}
+/* Positionng the top middle button for language and stylying it */
+#langpos{
+  position:absolute;
+  margin-left:-50%;
+  left:50%;
+  top: 0%;
+}
+
+#lang {
+  background-color: white;
+  outline: white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+/* Centering different attributes either mentioned above or below as the behaviour for smaller widths is different */
+@media screen and (max-width: 769px) {
+  #langpos {
+    position: absolute;
+    margin-right: -50%;
+    right: 50%;
+    top: 0%;
+  }
+}
+/* Styling the search input */
+#searchbar{
+  background: url(../images/find.png) no-repeat;
+  padding-left: 30px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+  top: 15%;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+/*Styling the container which holds the map search bar and buttons*/
+.container-fluid{
+  background-color: white;
+  position: relative;
+  top: 10%;
+  display: grid;
+  border-radius: 25px;
+  border: 2px solid white;
+  padding: 20px;
+  height: 60%;
+}
+/*Styling the top  text of te container */
+h4{
+  position: relative;
+  text-decoration: underline;
+  text-align: center;
+  margin: 0;
+  text-decoration-color: var(--grey);
+  color: var(--grey) !important;
+  font-size: 25px !important;
+}
+/*Position of the input search  bar*/
+.d-flex{
+  position: relative;
+  top: -60%;
+}
+/* Map position*/
+#mapdiv{
+  position: relative;
+  top: -195%;
+  width: 100%;
+  height: 300%;
+}
+/*Bottom buttons position*/
+.buttons {
+  margin: 0 auto;
+  margin: 5px auto;
+}
+@media only screen and (orientation: landscape){
+  .container-fluid{
+    background-color: white;
+    position: relative;
+    top: 10%;
+    display: grid;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+/*Positioning and styling the cancel  button*/
+#x{
+  position: absolute;
+  color: white;
+  border-style: none;
+  position: relative;
+  background-color: var(--red);
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+
+}
+
+/*Positioning and styling the cancel confirm*/
+#tick {
+  color: white;
+  border-style: none;
+  position: relative;
+  background-color: var(--blue);
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+
+}
+
+#contM {
+  width: 95%;
+  /* max-width: 600px; */
+  left: 2.5%;
+  border: 2px solid var(--lgrey);
+  margin: 0;
+  position: relative;
+}
+
+@media screen and (max-width: 400px) {
+  .fa-times-circle, .fa-check-circle{
+    display: none !important;
+  }
+
+}
+/*Making container more responsive when in landscape mode */
+@media only screen and (orientation: landscape){
+  .container-fluid{
+    background-color: white;
+    position: relative;
+    top: 10%;
+    display: grid;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+/* Positioning slow connection text */
+#mapdiv p{
+  position: absolute;
+  top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%)
+}
+
+@media screen and (max-height: 400) {
+  #toptext {
+    display: none;
+  }
+}
+
+#header {
+  display: block;
+}
+
+#toptext{
+  display: block;
+  margin: 0;
+}

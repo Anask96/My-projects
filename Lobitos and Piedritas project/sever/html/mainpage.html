@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../javascript/mainpage.js" async></script>
+    <link rel="stylesheet" href="../css/mainpage.css">
+    <!-- Bootstrap dependency. Do not remove -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title id="title">Home</title>
+    <!-- Catering for slow connections. -->
+    <script type="text/javascript">
+    //Anything longer than 10 seconds stops the page from loading any further resources other than the basic html elements and basic css but still downloads necessary icons in the background
+    var slowLoad = window.setTimeout( function() {
+      window.stop();
+    }, 10000);
+
+    window.addEventListener( 'load', function() {
+        window.clearTimeout( slowLoad );
+    }, false );
+</script>
+  <script src="https://kit.fontawesome.com/fcb15b35b1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Bootstrap dependency. Do not remove -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!-- Top bar for the whole page, reference bootstrap nav documentation -->
+  <nav class="navbar navbar-custom">
+    <div id="langpos" class="col-md-12 text-center">
+      <button id="lang" onclick="changeLanguage()" type="button" name="language">ESP | ENG</button>
+    </div>
+    <button id="menu" onclick="openSideBar()"><i class="fas fa-bars"></i></button>
+    <a id="homelink" class="nav-link" href="../html/mainpage.html">Home</a>
+    <div class="container.fluid">
+      <div id="sidebar" class="sidebar">
+        <h3 id="pointsSide">0 Points</h3>
+        <span tabindex=0 onfocus="openSideBar()" id="menubtn" style="font-size:30px;cursor:pointer" onclick="closeSideBar()">&#9776;</span>
+        <a href="javascript:void(0)" class="X" onclick="closeSideBar()">&times;</a>
+        <a id="signinSide" href="../html/signin.html">Sign In</a>
+        <a id="homeSide" href="../html/mainpage.html" onclick="closeSideBar()">Home</a>
+        <a id="reportSide" href="../html/reporting.html">Report</a>
+        <a id="collectSide" href="../html/collection.html">Collect</a>
+        <a onfocusout="closeSideBar()" id="dropoffSide" href="../html/collectionlocation.html">Drop Off Locations</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- A container that references entire page besides top bar. -->
+  <div id="wholePage" class="container-fluid">
+    <!-- A container for the top half of the webpage -->
+    <div id="tophalf" class="container-fluid">
+      <!-- A container for the left side of the top half of the page -->
+      <div id="leftside" class="container-fluid">
+        <!-- Section regarding everything needed for the report side of the page -->
+        <section class="report-trash">
+          <div id="reportpos" class="col-md-12 text-center">
+            <button id="reporting" onclick="routeToPage(this.id)" type="button" name="button">Report <i class="fas fa-pencil-alt"></i></button>
+          </div>
+          <p id="reptext">Submit a report for any trash you spot. This way volunteers can collect it. Help keep the
+            beautiful land of Lobitos and Piedritas clean!</p>
+        </section>
+      </div>
+      <!-- Vertical line in the middle of the top half of the page -->
+      <div class="vertline" alt="Vertical line seperating report and collect sections"></div>
+      <!-- A container for the right side of the top half of the page -->
+      <div id="rightside" class="container-fluid">
+        <!-- Section regarding all information needed for collecting trash -->
+        <section class="collect-trash">
+          <div id="collectpos" class="col-md-12 text-center">
+            <button id="collecting" onclick="routeToPage(this.id)" type="button" name="button">Collect <i class="fas fa-trash-alt"></i></button>
+          </div>
+          <p id="coltext">Do you want to help clean up and earn rewards? See trash reports and choose which you want to
+            collect. Deposit your trash at a vendor location.</p>
+        </section>
+      </div>
+
+    </div>
+
+<!-- A container for the second portion of the page -->
+<div id="secondhalf" class="container-fluid">
+  <!-- Section regarding all information of what the webpage is abbout -->
+  <section class="about">
+    <h1 id="about">About</h1>
+    <p id="aboutText">This website was made to allow people to report and collect trash in Lobitos, Piedritas and the surrounding areas.
+
+          Collected trash can be deposited at any partnered location, where you can earn points. These points can be
+          used to get rewards at the various partners.
+        </p>
+
+        <h3 id="disclaimer">Disclaimer</h3>
+        <p id="distext">Please be safe and do not pickup/report any garbage that may be harmful or dangerous.</p>
+      </section>
+    </div>
+
+
+</div>
+<!-- A container for the bottom half of the page containing -->
+<div id="bottomhalf" class="container-fluid">
+  <footer> <p tabindex=0>tel +51 41 6569745595</p>
+    <p tabindex=0 id="email">Email mesadperates@munilobitos.gob.pe</p>
+  </footer>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../javascript/collection.js" async></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/collection.css">
+  <script src="https://kit.fontawesome.com/fcb15b35b1.js" crossorigin="anonymous"></script>
+  <title>Collection</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!-- Top bar for the whole page, reference bootstrap nav documentation -->
+  <nav class="navbar navbar-custom">
+    <div id="langpos" class="col-md-12 text-center">
+      <button id="lang" onclick="changeLanguage()" type="button" name="language">ESP | ENG</button>
+    </div>
+    <button id="menu" onclick="openSideBar()"><i class="fas fa-bars" title="Menu Button"></i></button>
+    <a id="homelink" class="nav-link" href="../html/mainpage.html">Home</a>
+    <div class="container.fluid">
+      <div id="sidebar" class="sidebar">
+        <h3 id="pointsSide">138 Points</h3>
+        <span tabindex=0 onfocus="openSideBar()" id="menubtn" style="font-size:30px;cursor:pointer"
+          onclick="closeSideBar()">&#9776;</span>
+        <a id="signinSide" href="../html/signin.html">Sign In</a>
+        <a id="homeSide" href="../html/mainpage.html" onclick="closeSideBar()">Home</a>
+        <a id="reportSide" href="../html/reporting.html">Report</a>
+        <a id="collectSide" href="../html/collection.html">Collect</a>
+        <a onfocusout="closeSideBar()" id="dropoffSide" href="">Drop Off Locations</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Div with id mapDiv contains the map or the replacement of the map in case of a bad connection -->
+  <div id="mapdiv"></div>
+  <!-- use Openlayer api to load the map -->
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <!-- myList contains all the list items which are generated using javaScript(each item is a link to a specific trash description page) -->
+  <div id="myList"></div>
+</body>
+
+</html>

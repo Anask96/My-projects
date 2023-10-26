@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/collectionlocation.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="../javascript/collectionlocation.js" async></script>
+  <script src="https://kit.fontawesome.com/fcb15b35b1.js" crossorigin="anonymous"></script>
+  <title>Collection Location</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!-- Top bar for the whole page, reference bootstrap nav documentation -->
+  <nav class="navbar navbar-custom">
+    <div id="langpos" class="col-md-12 text-center">
+      <button id="lang" onclick="changeLanguage()" type="button" name="language">ESP | ENG</button>
+    </div>
+    <button id="menu" onclick="openSideBar()"><i class="fas fa-bars" title="Menu Button"></i></button>
+    <a id="homelink" class="nav-link" href="../html/mainpage.html">Home</a>
+    <div class="container.fluid">
+      <div id="sidebar" class="sidebar">
+        <h3 id="pointsSide">138 Points</h3>
+        <span tabindex=0 onfocus="openSideBar()" id="menubtn" style="font-size:30px;cursor:pointer"
+          onclick="closeSideBar()">&#9776;</span>
+        <a id="signinSide" href="../html/signin.html">Sign In</a>
+        <a id="homeSide" href="../html/mainpage.html" onclick="closeSideBar()">Home</a>
+        <a id="reportSide" href="../html/reporting.html">Report</a>
+        <a id="collectSide" href="../html/collection.html">Collect</a>
+        <a onfocusout="closeSideBar()" id="dropoffSide" href="">Drop Off Locations</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Div with id mapDiv contains the map or the replacement of the map in case of a bad connection -->
+  <div id="mapdiv"></div>
+  <!-- use Openlayer api to load the map -->
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <!-- div with class info contains all the info of the trash -->
+  <div class="info">
+    <!-- col1 contains the location description, type and size of the trash -->
+    <div class="col1">
+      <div id="where">
+        <p id="TL">Trash Location:</p>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div id="type">
+        <p id="TT">Trash Type:</p>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div id="size">
+        <p id="TS">Trash Size:</p>
+      </div>
+    </div>
+    <!-- col2 contains an img of the trash-->
+    <div class="col2">
+      <img id="trashImg" src="" alt="Trash photo" style="height:100%; width:100%">
+    </div>
+  </div>
+  <!-- This container contains the go back and collec buttons -->
+  <div class="buttons">
+    <div id="back"><button id="button1" onclick="previousPage()" type="button" name="Go back"
+        style="cursor:pointer">&laquo; Go Back To List</button></div>
+    <div id="collect"><button id="button2" type="button" name="Collected" style="cursor:pointer">Collect Trash</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+:root {
+  --red: #9c2416;
+  --blue: #004f9e;
+  --orange: #cc9000;
+  --green: #03b0a1;
+  --lgreen: #bfdfdc;
+  --yellow: #f4e6c4;
+  --grey: #575757;
+  --lgrey: #949494;
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* Making the webapp responsive for all device heights and widths */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Recommended font size for accessibility and font tex */
+button,
+h1,
+h3,
+p,
+footer,
+span,
+a,
+div {
+  font-size: 16px;
+}
+
+#menu {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+  z-index: 1;
+}
+
+/* Making every container for each section of the page responsive to overlapping elements. */
+div {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Top navigation bar style. Every dot class that contains nav styles the top bar */
+.navbar-custom {
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  float: right !important;
+  position: absolute;
+  color: var(--blue) !important;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Positiong the top middle button for language and stylying it */
+#langpos {
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+}
+
+#lang {
+  background-color: white;
+  outline: white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+#lang:hover {
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* Styling and positioning the menu bar that appears on the left side of the screen */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar span {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 0%;
+  left: 0%;
+  font-size: 36px;
+}
+
+.sidebar h3 {
+  position: absolute;
+  color: var(--yellow);
+  text-align: center;
+  right: 0;
+  top: 0%;
+  font-size: 30px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.sidebar a {
+  font-weight: bold;
+  padding: 8px 8px 8px 32px;
+  text-decoration: underline;
+  font-size: 24px;
+  float: left;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: rgb(92, 176, 255);
+}
+
+/* The exit button represented as an X on the top right */
+.X {
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 4%;
+  right: 0%;
+  font-size: 36px;
+}
+
+/* Reducing the density of the sidebar for devices with height less than 450px*/
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 45px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/* Creating a div class that consumes the entire height of any device so as to create containers relative to the devices specs */
+#wholePage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  max-width: 1280px;
+}
+
+#pts {
+  font-size: 30px;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* Splitting the page into three sections, the top half for the report and collect side by side, #secondhalf for the middle About section. Lastly #bottomhalf for the footer */
+#tophalf {
+  width: 100%;
+  flex: 3.5;
+  overflow: hidden;
+  position: relative;
+}
+
+#secondhalf {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+  flex: 4.5;
+  overflow: auto;
+  height: fit-content;
+  padding-bottom: 120px;
+  background-color: var(--yellow);
+  padding-top: 8px;
+}
+
+#bottomhalf {
+  max-height: 80px;
+  width: 100%;
+  flex: 0.5;
+}
+
+/* Adding text after the far left menu bar representing a users amount of accrued points */
+#menu::after {
+  content: ' 138 Pts';
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* Dividing the #tophalf of the section into two. The #leftside represents the left side of the section containing all report information and positions */
+#leftside {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+/* Position of the report button relative to its container #tophalf */
+#reportpos {
+  position: relative;
+  margin-left: -50%;
+  left: 50%;
+}
+
+/* Right side of the split #tophalf */
+#rightside {
+  float: right;
+  width: 50%;
+  height: 100%;
+}
+
+/* Position of the #collecting bution */
+#collectpos {
+  position: relative;
+  margin-left: -50%;
+  left: 50%;
+}
+
+#coltext {
+  margin-left: 2%;
+}
+
+/* Centering different attributes either mentioned above or below as the behaviour for smaller widths is different */
+@media screen and (max-width: 767px) {
+  #langpos {
+    position: absolute;
+    margin-right: -50%;
+    right: 50%;
+    top: 0%;
+
+  }
+
+  #reportpos {
+    position: relative;
+    margin-left: -100%;
+    right: 50%;
+  }
+
+  #collectpos {
+    position: relative;
+    margin-left: -100%;
+    right: 50%;
+  }
+}
+
+@media screen and (max-width: 316px) {
+  .loseIcon {
+    display: none !important;
+  }
+
+  #menu::after {
+    display: none;
+  }
+}
+
+/* Report button */
+#reporting {
+  border-style: none;
+  position: relative;
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#reporting:hover {
+  background-color: #af7d03;
+  color: white;
+}
+
+/*Collect Button*/
+#collecting {
+  border-style: none;
+  position: relative;
+  background-color: var(--green);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#collecting:hover {
+  background-color: #017e73;
+  color: white;
+}
+
+/* text beneath report button */
+.report-trash p {
+  text-align: left;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*Vertical line seperating #leftside and #rightside */
+.vertline {
+  border-left: 2px solid var(--lgrey);
+  height: 95%;
+  position: fixed;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+}
+
+/* text beneath collect button */
+.collect-trash p {
+  text-align: left;
+  position: relative;
+}
+
+/* Positioning the about section of the page. The follow up .about etc concerns the style of the text used */
+.about {
+  position: relative;
+  top: 0%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: fit-content;
+}
+
+.about h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.about h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.about p {
+  padding: 7px;
+  text-align: left;
+}
+
+/* Positioning the bottom half of the page */
+footer {
+  max-height: 80px;
+  background-color: white;
+  position: fixed;
+  text-align: center;
+  left: 0;
+  color: black;
+  width: 100%;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+footer p {
+  margin: 0;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+/* Removing the  footer on extremely small pages because it hampers readability of the page */
+@media only screen and (max-height: 394px) {
+  footer {
+    display: none;
+  }
+}
