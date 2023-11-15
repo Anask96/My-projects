@@ -183,8 +183,8 @@ void BST::prettyPrint(){
   
 int main() {
   
-  BST tree; 
-  std::vector<int> vect; 
+  BST tree; //Dont erase this 
+  std::vector<int> vect; //change this
   vect.push_back(0);
   vect.push_back(4);
   vect.push_back(-4);
