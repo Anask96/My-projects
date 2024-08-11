@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtGui import QColor, QBrush
 from PyQt5.QtWidgets import QTableWidgetItem
 from test import Ui_Form
 from shared import DataStorage, pause_event, stop_event
@@ -93,7 +94,10 @@ class window(QtWidgets.QMainWindow):
             self.ui.Highest_rssi.setItem(0,2, QTableWidgetItem(str(GroupTokens[highest_rssi_token][1]))) 
             self.ui.Highest_rssi.setItem(0,3, QTableWidgetItem(str(GroupTokens[highest_rssi_token][2]))) 
             self.ui.Highest_rssi.setItem(0,4, QTableWidgetItem(str(GroupTokens[highest_rssi_token][3]))) 
-            self.ui.Highest_rssi.setItem(0,5, QTableWidgetItem(str(GroupTokens[highest_rssi_token][5])))
+            item = QTableWidgetItem()
+            if GroupTokens[highest_rssi_token][5] == 1:
+                item.setBackground(QColor(255, 0, 0))  # Red color
+            self.ui.Highest_rssi.setItem(0, 5, item)  # Set the item in the table
 
         
 
@@ -119,7 +123,14 @@ class window(QtWidgets.QMainWindow):
                 self.ui.group_tokens.setItem(row_index,2, QTableWidgetItem(str(values[1]))) 
                 self.ui.group_tokens.setItem(row_index,3, QTableWidgetItem(str(values[2]))) 
                 self.ui.group_tokens.setItem(row_index,4, QTableWidgetItem(str(values[3]))) 
-                self.ui.group_tokens.setItem(row_index,5, QTableWidgetItem(str(values[5])))
+            
+            # Check the value of values[5] and set the background color to red if it's 1
+                item = QTableWidgetItem()
+                if values[5] == 1:
+                    item.setBackground(QColor(255, 0, 0))  # Red color
+                    
+                self.ui.group_tokens.setItem(row_index, 5, item)  # Set the item in the table
+
                 row_index += 1
 
     def update_rssi_table(self):
