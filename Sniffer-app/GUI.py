@@ -4,7 +4,9 @@ from test import Ui_Form
 from shared import DataStorage, pause_event, stop_event
 import sys
 import threading
+import os
 
+os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
 
 class window(QtWidgets.QMainWindow):
 
